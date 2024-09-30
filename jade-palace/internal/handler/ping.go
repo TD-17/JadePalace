@@ -4,6 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+
+	"github.com/TD17/jade-palace/internal/services"
 )
 
 func RunPing(c *gin.Context) {
@@ -11,18 +13,11 @@ func RunPing(c *gin.Context) {
 		"message": "pong",
 	})
 }
-func RunPang(c *gin.Context) {
-	c.JSON(http.StatusInternalServerError, gin.H{
-		"message": "pang",
-	})
-}
-func RunPrng(c *gin.Context) {
-	c.JSON(http.StatusForbidden, gin.H{
-		"message": "prng",
-	})
-}
-func RunPlng(c *gin.Context) {
-	c.JSON(http.StatusCreated, gin.H{
-		"message": "plng",
+
+func ChatHandler(c *gin.Context) {
+	// services.OpenAIChat()
+	services.SampleOpenAI()
+	c.JSON(http.StatusOK, gin.H{
+		"message": "success",
 	})
 }

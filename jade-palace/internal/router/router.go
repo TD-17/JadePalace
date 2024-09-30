@@ -12,10 +12,7 @@ func SetupRouter() *gin.Engine {
 	r := gin.Default()
 
 	r.GET("/ping", handler.RunPing)
-	r.GET("/pang", handler.RunPang)
-	r.GET("/prng", handler.RunPrng)
-	r.GET("/plng", handler.RunPlng)
-	r.GET("/chatgpt", handler.GetGPT)
+	r.POST("/chat", handler.ChatHandler)
 
 	return r
 }

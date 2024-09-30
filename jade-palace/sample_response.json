@@ -1,0 +1,27 @@
+{
+    "id": "chatcmpl-ADHUpwwTgUHGcfPD8Jv36oojuss8g",
+    "object": "chat.completion",
+    "created": 1727728883,
+    "model": "gpt-4o-mini-2024-07-18",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "A function calls self,  \nLayers of thought intertwine,  \nEndless paths unfold.",
+                "refusal": null
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 28,
+        "completion_tokens": 18,
+        "total_tokens": 46,
+        "completion_tokens_details": {
+            "reasoning_tokens": 0
+        }
+    },
+    "system_fingerprint": "fp_f85bea6784"
+}
