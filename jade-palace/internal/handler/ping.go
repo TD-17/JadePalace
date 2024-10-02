@@ -15,7 +15,7 @@ func RunPing(c *gin.Context) {
 }
 
 func ChatHandler(c *gin.Context) {
-	// services.OpenAIChat()
+	//services.OpenAIChat("hi there")
 	services.SampleOpenAI()
 	c.JSON(http.StatusOK, gin.H{
 		"message": "success",

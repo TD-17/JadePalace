@@ -9,7 +9,7 @@ import (
 	"github.com/TD17/jade-palace/pkg"
 )
 
-func OpenAIChat() error {
+func OpenAIChat(message string) error {
 	resp, err := pkg.OpenAiClient.CreateChatCompletion(
 		context.Background(),
 		openai.ChatCompletionRequest{
@@ -23,7 +23,7 @@ func OpenAIChat() error {
 				},
 				{
 					Role:    "user",
-					Content: "Lorem ipsum",
+					Content: message,
 				},
 			},
 		},
