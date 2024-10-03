@@ -13,6 +13,7 @@ func SetupRouter() *gin.Engine {
 
 	r.GET("/ping", handler.RunPing)
 	r.POST("/chat", handler.ChatHandler)
+	// r.POST("/value", handler.UseValue)
 
 	return r
 }

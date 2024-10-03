@@ -9,7 +9,7 @@ import (
 	"github.com/TD17/jade-palace/pkg"
 )
 
-func OpenAIChat(message string) error {
+func OpenAIChat(message string) (*openai.ChatCompletionResponse, error) {
 	resp, err := pkg.OpenAiClient.CreateChatCompletion(
 		context.Background(),
 		openai.ChatCompletionRequest{
@@ -30,8 +30,9 @@ func OpenAIChat(message string) error {
 	)
 	if err != nil {
 		fmt.Printf("Completion error %v", err)
-		return err
+		//nil can't be variable, it can be memory location. So openai.ChatCompletionResponse will be a pointer
+		return nil, err
 	}
 	fmt.Println(resp.Choices[0].Message.Content)
-	return nil
+	return &resp, nil
 }

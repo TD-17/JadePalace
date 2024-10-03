@@ -8,7 +8,7 @@
             "index": 0,
             "message": {
                 "role": "assistant",
-                "content": "A function calls self,  \nLayers of thought intertwine,  \nEndless paths unfold.",
+                "content": "A function calls self,\nLayers of thought intertwine,\nEndless paths unfold.",
                 "refusal": null
             },
             "logprobs": null,
