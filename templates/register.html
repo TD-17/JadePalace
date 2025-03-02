@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        button { background-color: #007bff; color: white; border: none; padding: 10px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h2>Register Here</h2>
+    <p>Click the button below to verify your registration.</p>
+    <form action="/user/verify" method="POST">
+        <input type="hidden" name="user_id" value="{{ .UserID }}">
+        <button type="submit">Verify</button>
+    </form>
+</body>
+</html>
