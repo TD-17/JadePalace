@@ -1,1 +1,2 @@
-go run ./cmd/main.go
+go build -o app ./cmd
+./app
