@@ -2,31 +2,33 @@ package config
 
 import (
 	"fmt"
-	"strings"
+	"os"
 
 	"github.com/spf13/viper"
 )
 
+var OpenAIKey, MongoDBURL, DBPassword, PublicKey, PrivateKey string
+
 func InitConfig() {
-	viper.SetConfigName("config")
-	viper.SetConfigType("json")
-	viper.AddConfigPath("./config")
-	viper.AddConfigPath("../config")
+	viper.AutomaticEnv() // Automatically read from environment variables
 
-	if err := viper.ReadInConfig(); err != nil {
-		fmt.Printf("error reading config file: %v\n", err)
-		panic(fmt.Errorf("fatal error reading config file: %w", err))
-	} else {
-		fmt.Println("Config file loaded successfully")
+	// Read from environment variables
+	OpenAIKey = os.Getenv("OPENAI_API_KEY")
+	MongoDBURL = os.Getenv("MONGODB_URL")
+	DBPassword = os.Getenv("DB_PASSWORD")
+	PublicKey = os.Getenv("PUBLIC_KEY")
+	PrivateKey = os.Getenv("PRIVATE_KEY")
+
+	// Print configuration for debugging
+	fmt.Println("✅ Configuration Loaded:")
+	fmt.Println("OpenAI API Key:", OpenAIKey)
+	fmt.Println("MongoDB URL:", MongoDBURL)
+	fmt.Println("Database Password:", DBPassword)
+	fmt.Println("Public Key:", PublicKey)
+	fmt.Println("Private Key:", PrivateKey)
+
+	// Check if required variables are missing
+	if OpenAIKey == "" || MongoDBURL == "" || DBPassword == "" {
+		panic("❌ ERROR: Missing required environment variables")
 	}
-
-	viper.AutomaticEnv()
-	viper.BindEnv("openai_api_key")
-
-	viper.Set("private_key", strings.ReplaceAll(viper.GetString("private_key"), `\n`, "\n"))
-
-	fmt.Println("OpenAI key", viper.GetString("openai_api_key"))
-	fmt.Println("OpenAI key", viper.GetString("private_key"))
-	fmt.Println("Server port", viper.GetInt("server.port"))
-	fmt.Println("MongoDB url", viper.GetString("mongodb_url"))
 }
