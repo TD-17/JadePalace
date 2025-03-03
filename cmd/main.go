@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"time"
 
 	"github.com/TD17/jade-palace/cmd/server"
 	"github.com/TD17/jade-palace/config"
@@ -11,6 +12,7 @@ import (
 )
 
 func main() {
+	time.Sleep(2 * time.Second)
 	log.Println("🔍 Starting config initialization...")
 	config.InitConfig()
 

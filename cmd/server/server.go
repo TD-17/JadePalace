@@ -11,6 +11,8 @@ import (
 )
 
 func Server() {
+	log.Println("✅ Server Initialization Completed! Now starting Gin server...")
+
 	// Add a logger
 	r := gin.Default()
 
