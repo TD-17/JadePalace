@@ -21,11 +21,6 @@ func InitConfig() {
 
 	// Print configuration for debugging
 	fmt.Println("✅ Configuration Loaded:")
-	fmt.Println("OpenAI API Key:", OpenAIKey)
-	fmt.Println("MongoDB URL:", MongoDBURL)
-	fmt.Println("Database Password:", DBPassword)
-	fmt.Println("Public Key:", PublicKey)
-	fmt.Println("Private Key:", PrivateKey)
 
 	// Check if required variables are missing
 	if OpenAIKey == "" || MongoDBURL == "" || DBPassword == "" {
