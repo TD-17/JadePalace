@@ -20,5 +20,5 @@ func RegisterHandler(c *gin.Context) {
 // HTML Registration page
 func ShowRegisterPage(c *gin.Context) {
 	userID := c.Query("user_id")
-	c.HTML(http.StatusOK, "register.html", gin.H{"user_id": userID})
+	c.HTML(http.StatusOK, "register.html", gin.H{"UserID": userID})
 }
