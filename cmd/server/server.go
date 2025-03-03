@@ -37,6 +37,6 @@ func Server() {
 	// **Ensure Gin binds to 0.0.0.0 instead of localhost**
 	err := r.Run("0.0.0.0:" + port)
 	if err != nil {
-		log.Fatalf("Failed to start server: %v", err)
+		log.Fatalf("❌ Server failed to start: %v", err)
 	}
 }

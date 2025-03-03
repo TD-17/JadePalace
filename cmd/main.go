@@ -11,14 +11,21 @@ import (
 )
 
 func main() {
+	log.Println("🔍 Starting config initialization...")
 	config.InitConfig()
-	database.DbInit()
-	err := pkg.OpenaiInit()
 
+	log.Println("🔍 Connecting to database...")
+	database.DbInit()
+	log.Println("✅ Database initialized!")
+
+	log.Println("🔍 Initializing OpenAI...")
+	err := pkg.OpenaiInit()
 	if err != nil {
-		log.Fatal("chatgpt couldn't be initialised")
+		log.Fatal("❌ ChatGPT couldn't be initialized")
 		os.Exit(0)
 	}
+	log.Println("✅ OpenAI initialized!")
 
+	log.Println("🚀 Starting server...")
 	server.Server()
 }
