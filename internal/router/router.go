@@ -18,6 +18,6 @@ func SetupRouter(r *gin.RouterGroup) {
 	r.GET("/register", handler.RegisterHandler)       // API returning URL
 	r.GET("/register-page", handler.ShowRegisterPage) // Serves HTML Page
 	r.POST("/verify", handler.VerifyUser)             // Processes verification
-	r.POST("/slack/store-auth", handler.StoreSlackInstallation)
+	r.POST("/slack/store-auth", handler.StoreSlackInstallation())
 
 }
