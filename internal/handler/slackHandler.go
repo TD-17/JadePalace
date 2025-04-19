@@ -17,7 +17,7 @@ func StoreSlackInstallation() gin.HandlerFunc {
             c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
             return
         }
-        log.Println("✅ Received install data:", installData)
+        log.Println("✅ Received install data:")
         collection, err := database.OpenCollection("slack_installations")
         if err != nil {
             log.Println("❌ Failed to open collection:", err)
