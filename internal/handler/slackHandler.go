@@ -2,6 +2,7 @@ package handler
 
 import (
 	"context"
+    "log"
 	"time"
 	"net/http"
 	"github.com/TD17/jade-palace/database"
